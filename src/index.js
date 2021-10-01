@@ -1,15 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom'
+import React from 'react'
+import App from './App'
+import { Provider } from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import './_base.scss'
+import store from './redux/store'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+   <Provider store={store}>
+      <Router>
+         <App />
+      </Router>
+   </Provider>,
 
-
-reportWebVitals();
+   document.getElementById('root')
+)
